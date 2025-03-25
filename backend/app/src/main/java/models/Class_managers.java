@@ -1,3 +1,5 @@
+package models;
+
 public class Class_managers {
     private String Class_id;
     private String Sem_id;

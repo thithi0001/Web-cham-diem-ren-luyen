@@ -1,6 +1,8 @@
-public class Criterion {
+package models;
+
+public class Criterions {
     private String Crit_id;
-    private String Desc;
+    private String Description;
     private int Max_point;
 
     public String getCrit_id() {
@@ -11,12 +13,12 @@ public class Criterion {
         Crit_id = crit_id;
     }
 
-    public String getDesc() {
-        return Desc;
+    public String getDescription() {
+        return Description;
     }
 
-    public void setDesc(String desc) {
-        Desc = desc;
+    public void setDescription(String description) {
+        Description = description;
     }
 
     public int getMax_point() {

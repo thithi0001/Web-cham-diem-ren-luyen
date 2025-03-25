@@ -1,4 +1,6 @@
-public class Role {
+package models;
+
+public class Roles {
     private int Role_id;
     private String Role_name;
 

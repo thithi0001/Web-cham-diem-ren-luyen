@@ -1,3 +1,5 @@
+package models;
+
 public class Criterion_point {
     private int Crit_point_id;
     private String Crit_id;

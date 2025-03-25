@@ -1,4 +1,6 @@
-public class User {
+package models;
+
+public class Users {
     private String user_id;
     private String password;
     private int role_id;

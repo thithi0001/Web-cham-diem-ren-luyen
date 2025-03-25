@@ -1,4 +1,6 @@
-public class Department {
+package models;
+
+public class Departments {
     private int Dept_id;
     private String Name;
 

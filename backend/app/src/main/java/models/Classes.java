@@ -1,4 +1,6 @@
-public class _Class {
+package models;
+
+public class Classes {
     private String class_id;
     private int dept_id;
     private String class_name;

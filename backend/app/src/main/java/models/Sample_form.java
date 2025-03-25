@@ -1,3 +1,5 @@
+package models;
+
 public class Sample_form {
     private String Sample_id;
     private boolean Is_using;
