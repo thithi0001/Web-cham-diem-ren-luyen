@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Criterions {
     private String Crit_id;

@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Roles {
     private int Role_id;

@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Form_Criterion {
     private int Form_crit_id;

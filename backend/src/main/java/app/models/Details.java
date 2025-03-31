@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Details {
     private String Detail_id;

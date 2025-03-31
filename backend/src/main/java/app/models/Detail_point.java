@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Detail_point {
     private int Detail_point_id;

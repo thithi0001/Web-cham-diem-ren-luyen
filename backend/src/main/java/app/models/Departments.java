@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Departments {
     private int Dept_id;

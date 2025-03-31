@@ -1,4 +1,4 @@
-package models;
+package app.models;
 
 public class Class_managers {
     private String Class_id;
