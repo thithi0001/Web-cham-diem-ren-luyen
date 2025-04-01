@@ -1,31 +1,22 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "criterions")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Criterions {
-    private String Crit_id;
-    private String Description;
-    private int Max_point;
+    @Id
+    @Column(name = "Crit_id")
+    private String critId;
 
-    public String getCrit_id() {
-        return Crit_id;
-    }
+    @Column(name = "Description", nullable = false)
+    private String description;
 
-    public void setCrit_id(String crit_id) {
-        Crit_id = crit_id;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
-    }
-
-    public int getMax_point() {
-        return Max_point;
-    }
-
-    public void setMax_point(int max_point) {
-        Max_point = max_point;
-    }
+    @Column(name = "Max_point", nullable = false)
+    private Integer maxPoint;
 }

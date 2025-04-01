@@ -1,22 +1,21 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "departments")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Departments {
-    private int Dept_id;
-    private String Name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // tu dong gia tang
+    @Column(name = "Dept_id")
+    private Integer departmentId;
 
-    public int getDept_id() {
-        return Dept_id;
-    }
-
-    public void setDept_id(int dept_id) {
-        Dept_id = dept_id;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
+    @Column(name = "Name", unique = true, nullable = false)
+    private String name;
 }
+

@@ -1,49 +1,40 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "class_managers")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Class_managers {
-    private String Class_id;
-    private String Sem_id;
-    private String Advisor_id;
-    private String LT_id;
-    private String LP_id;
+    @EmbeddedId
+    private ClassManagersId id;
 
-    public String getClass_id() {
-        return Class_id;
-    }
+    @ManyToOne
+    @MapsId("classId")
+    @JoinColumn(name = "Class_id")
+    private Classes aClass;
 
-    public void setClass_id(String class_id) {
-        Class_id = class_id;
-    }
+    @ManyToOne
+    @MapsId("semId")
+    @JoinColumn(name = "Sem_id")
+    private Semesters semester;
 
-    public String getSem_id() {
-        return Sem_id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "Instructor_id")
+    @Column(name = "Advisor_id")
+    private Instructors advisor;
 
-    public void setSem_id(String sem_id) {
-        Sem_id = sem_id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "Student_id")
+    @Column(name = "LT_id")
+    private Students lt;
 
-    public String getAdvisor_id() {
-        return Advisor_id;
-    }
-
-    public void setAdvisor_id(String advisor_id) {
-        Advisor_id = advisor_id;
-    }
-
-    public String getLT_id() {
-        return LT_id;
-    }
-
-    public void setLT_id(String LT_id) {
-        this.LT_id = LT_id;
-    }
-
-    public String getLP_id() {
-        return LP_id;
-    }
-
-    public void setLP_id(String LP_id) {
-        this.LP_id = LP_id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "Student_id")
+    @Column(name = "LP_id")
+    private Students lp;
 }

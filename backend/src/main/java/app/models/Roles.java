@@ -1,22 +1,20 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "roles")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Roles {
-    private int Role_id;
-    private String Role_name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Role_id")
+    private Integer roleId;
 
-    public int getRole_id() {
-        return Role_id;
-    }
-
-    public void setRole_id(int role_id) {
-        Role_id = role_id;
-    }
-
-    public String getRole_name() {
-        return Role_name;
-    }
-
-    public void setRole_name(String role_name) {
-        Role_name = role_name;
-    }
+    @Column(name = "Role_name", nullable = false)
+    private String roleName;
 }

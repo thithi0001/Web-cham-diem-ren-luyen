@@ -1,49 +1,29 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "classes")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Classes {
-    private String class_id;
-    private int dept_id;
-    private String class_name;
-    private int num_of_students;
-    private int current_num_of_students;
+    @Id
+    @Column(name = "Class_id")
+    private String classId;
 
-    public String getClass_id() {
-        return class_id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "Dept_id")
+    private Departments department;
 
-    public String getClass_name() {
-        return class_name;
-    }
+    @Column(name = "Class_name", nullable = false, unique = true)
+    private String className;
 
-    public int getCurrent_num_of_students() {
-        return current_num_of_students;
-    }
+    @Column(name = "Num_of_students", nullable = false)
+    private Integer numOfStudents;
 
-    public int getNum_of_students() {
-        return num_of_students;
-    }
-
-    public int getDept_id() {
-        return dept_id;
-    }
-
-    public void setClass_id(String class_id) {
-        this.class_id = class_id;
-    }
-
-    public void setClass_name(String class_name) {
-        this.class_name = class_name;
-    }
-
-    public void setCurrent_num_of_students(int current_num_of_students) {
-        this.current_num_of_students = current_num_of_students;
-    }
-
-    public void setNum_of_students(int num_of_students) {
-        this.num_of_students = num_of_students;
-    }
-
-    public void setDept_id(int dept_id) {
-        this.dept_id = dept_id;
-    }
+    @Column(name = "Current_num_of_students", nullable = false)
+    private Integer currentNumOfStudents;
 }

@@ -1,58 +1,31 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "details")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Details {
-    private String Detail_id;
-    private String Crit_id;
-    private int Order;
-    private String Description;
-    private int Max_point;
-    private boolean Is_proof_needed;
+    @Id
+    @Column(name = "Detail_id")
+    private String detailId;
 
-    public String getDetail_id() {
-        return Detail_id;
-    }
+    @JoinColumn(name = "Crit_id")
+    private Criterions criterion;
 
-    public void setDetail_id(String detail_id) {
-        Detail_id = detail_id;
-    }
+    @Column(name = "Order", nullable = false)
+    private Integer order;
 
-    public String getCrit_id() {
-        return Crit_id;
-    }
+    @Column(name = "Description", nullable = false)
+    private String description;
 
-    public void setCrit_id(String crit_id) {
-        Crit_id = crit_id;
-    }
+    @Column(name = "Max_point", nullable = false)
+    private Integer maxPoint;
 
-    public int getOrder() {
-        return Order;
-    }
-
-    public void setOrder(int order) {
-        Order = order;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
-    }
-
-    public int getMax_point() {
-        return Max_point;
-    }
-
-    public void setMax_point(int max_point) {
-        Max_point = max_point;
-    }
-
-    public boolean isIs_proof_needed() {
-        return Is_proof_needed;
-    }
-
-    public void setIs_proof_needed(boolean is_proof_needed) {
-        Is_proof_needed = is_proof_needed;
-    }
+    @Column(name = "Is_proof_needed", nullable = false)
+    private boolean isProofNeeded;
 }

@@ -1,58 +1,32 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "detail_point")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Detail_point {
-    private int Detail_point_id;
-    private String Detail_id;
-    private int Crit_point_id;
-    private int Student_point;
-    private int BCS_point;
-    private int Advisor_point;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // tu dong gia tang
+    @Column(name = "Detail_point_id")
+    private Integer detailPointId;
 
-    public int getDetail_point_id() {
-        return Detail_point_id;
-    }
+    @JoinColumn(name = "Detail_id")
+    private Details detail;
 
-    public void setDetail_point_id(int detail_point_id) {
-        Detail_point_id = detail_point_id;
-    }
+    @JoinColumn(name = "Crit_point_id")
+    private Criterion_point critPoint;
 
-    public String getDetail_id() {
-        return Detail_id;
-    }
+    @Column(name = "Student_point", columnDefinition = "Integer default 0")
+    private Integer studentPoint = 0;
 
-    public void setDetail_id(String detail_id) {
-        Detail_id = detail_id;
-    }
+    @Column(name = "BCS_point", columnDefinition = "Integer default 0")
+    private Integer bcsPoint = 0;
 
-    public int getCrit_point_id() {
-        return Crit_point_id;
-    }
-
-    public void setCrit_point_id(int crit_point_id) {
-        Crit_point_id = crit_point_id;
-    }
-
-    public int getStudent_point() {
-        return Student_point;
-    }
-
-    public void setStudent_point(int student_point) {
-        Student_point = student_point;
-    }
-
-    public int getBCS_point() {
-        return BCS_point;
-    }
-
-    public void setBCS_point(int BCS_point) {
-        this.BCS_point = BCS_point;
-    }
-
-    public int getAdvisor_point() {
-        return Advisor_point;
-    }
-
-    public void setAdvisor_point(int advisor_point) {
-        Advisor_point = advisor_point;
-    }
+    @Column(name = "Advisor_point", columnDefinition = "Integer default 0")
+    private Integer advisorPoint = 0;
 }

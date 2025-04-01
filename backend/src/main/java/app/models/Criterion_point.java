@@ -1,58 +1,32 @@
 package app.models;
 
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "criterion_point")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Criterion_point {
-    private int Crit_point_id;
-    private String Crit_id;
-    private int Evaluate_id;
-    private int Student_point;
-    private int BCS_point;
-    private int Advisor_point;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // tu dong gia tang
+    @Column(name = "Crit_point_id")
+    private Integer critPointId;
 
-    public int getCrit_point_id() {
-        return Crit_point_id;
-    }
+    @JoinColumn(name = "Crit_id")
+    private Criterions criterion;
 
-    public void setCrit_point_id(int crit_point_id) {
-        Crit_point_id = crit_point_id;
-    }
+    @JoinColumn(name = "Evaluate_id")
+    private Evaluates evaluate;
 
-    public String getCrit_id() {
-        return Crit_id;
-    }
+    @Column(name = "Student_point", columnDefinition = "Integer default 0")
+    private Integer studentPoint = 0;
 
-    public void setCrit_id(String crit_id) {
-        Crit_id = crit_id;
-    }
+    @Column(name = "BCS_point", columnDefinition = "Integer default 0")
+    private Integer bcsPoint = 0;
 
-    public int getEvaluate_id() {
-        return Evaluate_id;
-    }
-
-    public void setEvaluate_id(int evaluate_id) {
-        Evaluate_id = evaluate_id;
-    }
-
-    public int getStudent_point() {
-        return Student_point;
-    }
-
-    public void setStudent_point(int student_point) {
-        Student_point = student_point;
-    }
-
-    public int getBCS_point() {
-        return BCS_point;
-    }
-
-    public void setBCS_point(int BCS_point) {
-        this.BCS_point = BCS_point;
-    }
-
-    public int getAdvisor_point() {
-        return Advisor_point;
-    }
-
-    public void setAdvisor_point(int advisor_point) {
-        Advisor_point = advisor_point;
-    }
+    @Column(name = "Advisor_point", columnDefinition = "Integer default 0")
+    private Integer advisorPoint = 0;
 }
