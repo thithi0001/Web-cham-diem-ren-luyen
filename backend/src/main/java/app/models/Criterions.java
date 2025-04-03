@@ -18,5 +18,5 @@ public class Criterions {
     private String description;
 
     @Column(name = "Max_point", nullable = false)
-    private Integer maxPoint;
+    private int maxPoint;
 }

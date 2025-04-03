@@ -30,6 +30,6 @@ public class Proofs {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "Proof_status", columnDefinition = "String default Pending")
-    private ProofStatus status;
+    @Column(name = "Proof_status", columnDefinition = "varchar(20) default Pending")
+    private ProofStatus status = ProofStatus.Pending;
 }

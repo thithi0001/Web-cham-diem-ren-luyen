@@ -15,18 +15,20 @@ public class Criterion_point {
     @Column(name = "Crit_point_id")
     private Integer critPointId;
 
+    @ManyToOne
     @JoinColumn(name = "Crit_id")
     private Criterions criterion;
 
+    @ManyToOne
     @JoinColumn(name = "Evaluate_id")
     private Evaluates evaluate;
 
-    @Column(name = "Student_point", columnDefinition = "Integer default 0")
-    private Integer studentPoint = 0;
+    @Column(name = "Student_point", columnDefinition = "int default 0")
+    private int studentPoint = 0;
 
-    @Column(name = "BCS_point", columnDefinition = "Integer default 0")
-    private Integer bcsPoint = 0;
+    @Column(name = "BCS_point", columnDefinition = "int default 0")
+    private int bcsPoint = 0;
 
-    @Column(name = "Advisor_point", columnDefinition = "Integer default 0")
-    private Integer advisorPoint = 0;
+    @Column(name = "Advisor_point", columnDefinition = "int default 0")
+    private int advisorPoint = 0;
 }
