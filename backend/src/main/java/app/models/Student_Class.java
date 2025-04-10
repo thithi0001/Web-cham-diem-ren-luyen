@@ -1,5 +1,6 @@
 package app.models;
 
+import app.embedded_id.StudentClassId;
 import jakarta.persistence.*;
 import lombok.*;
 

@@ -1,6 +1,6 @@
 package app.repositories;
 
-import app.models.StudentClassId;
+import app.embedded_id.StudentClassId;
 import app.models.Student_Class;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

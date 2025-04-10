@@ -1,5 +1,6 @@
 package app.models;
 
+import app.embedded_id.RolePermissionId;
 import jakarta.persistence.*;
 import lombok.*;
 

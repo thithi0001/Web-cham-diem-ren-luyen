@@ -1,4 +1,4 @@
-package app.models;
+package app.embedded_id;
 
 import jakarta.persistence.*;
 import lombok.*;

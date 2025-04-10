@@ -1,5 +1,6 @@
 package app.models;
 
+import app.embedded_id.ClassManagersId;
 import jakarta.persistence.*;
 import lombok.*;
 
