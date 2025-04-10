@@ -15,7 +15,7 @@ public class StudentController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getStudent(@PathVariable String id) {
         return studentService.getStudentById(id)
-                .map(student -> ResponseEntity.ok(student))
+                .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 

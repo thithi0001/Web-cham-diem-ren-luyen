@@ -96,6 +96,11 @@ WHERE Class_id IN (
     FROM student_current_class_info
 );
 
+--
+CREATE OR REPLACE VIEW a_whole_evaluate AS
+SELECT E.
+FROM evaluates AS E
+
 -- department
 -- semester
 

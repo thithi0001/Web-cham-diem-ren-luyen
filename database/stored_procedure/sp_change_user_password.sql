@@ -1,3 +1,5 @@
+drop procedure change_user_password;
+
 DELIMITER //
 
 CREATE PROCEDURE change_user_password(
@@ -7,7 +9,7 @@ CREATE PROCEDURE change_user_password(
 BEGIN
 	UPDATE users
     SET Pwd = newPwd
-    WHERE User_id = uid;
+    WHERE User_id = SUBSTRING_INDEX(CURRENT_USER(), '@', 1);
 END//
 
 DELIMITER ;
