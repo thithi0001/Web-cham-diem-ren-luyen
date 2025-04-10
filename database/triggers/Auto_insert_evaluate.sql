@@ -1,0 +1,10 @@
+DELIMITER $$
+
+CREATE TRIGGER Auto_insert_evaluate
+AFTER INSERT ON deadline
+FOR EACH ROW
+BEGIN
+	IF NEW.Role_id = 
+END$$
+
+DELIMITER ;
