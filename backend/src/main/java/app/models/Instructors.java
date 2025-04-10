@@ -1,5 +1,6 @@
 package app.models;
 
+import app.enums.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;

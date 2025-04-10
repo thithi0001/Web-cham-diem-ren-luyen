@@ -1,5 +1,7 @@
 package app.models;
 
+import app.enums.EvaluateStatus;
+import app.enums.Rating;
 import jakarta.persistence.*;
 import lombok.*;
 

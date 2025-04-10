@@ -1,4 +1,4 @@
-package app.models;
+package app.enums;
 
 public enum Rating {
     Xuat_sac,

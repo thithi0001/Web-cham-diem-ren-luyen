@@ -1,6 +1,6 @@
 package app.repositories;
 
-import app.models.ProofStatus;
+import app.enums.ProofStatus;
 import app.models.Proofs;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;

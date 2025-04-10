@@ -1,5 +1,7 @@
 package app.models;
 
+import app.enums.ProofStatus;
+import app.enums.ProofType;
 import jakarta.persistence.*;
 import lombok.*;
 
