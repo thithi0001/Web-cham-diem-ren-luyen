@@ -20,7 +20,7 @@ public class Semesters {
     private String schoolYear;
 
     @Column(name = "Semester", nullable = false)
-    private String semester;
+    private int semester;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "Start_date", nullable = false)

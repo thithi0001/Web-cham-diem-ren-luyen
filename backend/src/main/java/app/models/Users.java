@@ -14,7 +14,7 @@ public class Users {
     @Column(name = "User_id")
     private String userId;
 
-    @Column(name = "Password", nullable = false)
+    @Column(name = "Pwd", nullable = false)
     private String password;
 
     @ManyToOne
